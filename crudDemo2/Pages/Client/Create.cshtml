@@ -1,0 +1,60 @@
+﻿@page
+@model crudDemo2.Pages.Client.CreateModel
+@{
+}
+<br >
+<h2>New Client</h2>
+
+@if (Model.msg.Length > 0)
+{
+    @if (Model.msg == "failed")
+    {
+        <div class="alert alert-warning alert-dismissible " role="alert">
+            <strong>All field requierd</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    else if(Model.msg == "sucess")
+    {
+        <div class="alert alert-warning alert-dismissible " role="alert">
+            <strong>"New User Created Succesfully"</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.userInfo.name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.userInfo.email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.userInfo.phone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="address" value="@Model.userInfo.address">
+        </div>
+    </div>
+    <div class="row mb-3">
+        
+        <div class=" col-sm-3 offset-sm-3 d-grid ">
+            <button type="submit" class="btn btn-primary ">Submit</button>
+        </div>
+        <div class=" col-sm-3 offset-sm-3 d-grid ">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

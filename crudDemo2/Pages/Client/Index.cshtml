@@ -1,0 +1,38 @@
+﻿@page
+@model crudDemo2.Pages.Client.IndexModel
+@{
+    
+}
+<br>
+<h2>List of users</h2>
+<a class="btm btn-sm btn-primary" href="Client/Create">New User</a>
+<table class="table">
+    <thead>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Address</td>
+        <td>Created On</td>
+        <td>Action</td>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listUser)
+        {
+            <tr>
+                <td>@item.userId</td>
+                <td>@item.name</td>
+                <td>@item.email</td>
+                <td>@item.phone</td>
+                <td>@item.address</td>
+                <td>@item.created_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="Client/Edit?id=">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="Client/Delete?id=">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
